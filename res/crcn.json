@@ -1,0 +1,48 @@
+{
+  "Information et données": {
+    "color": [241,161,65],
+    "rank": 0,
+    "skills": [
+      "Mener une recherche et une veille d'information",
+      "Gérer des données",
+      "Traiter des données"
+    ]
+  },
+  "Communication et collaboration": {
+    "color": [26,140,137],
+    "rank": 1,
+    "skills": [
+      "Interagir",
+      "Partager et publier",
+      "Collaborer",
+      "S'insérer dans le monde numérique"
+    ]
+  },
+  "Création de contenu": {
+    "color": [61,104,255],
+    "rank": 2,
+    "skills": [
+      "Développer des documents textuels",
+      "Développer des documents multimedia",
+      "Adapter les documents à leur finalité",
+      "Programmer"
+    ]
+  },
+  "Protection et sécurité": {
+    "color": [172,0,141],
+    "rank": 3,
+    "skills": [
+      "Sécuriser l'environnement numérique",
+      "Protéger les données personnelles et la vie privée",
+      "Protéger la santé, le bien-être et l'environnement"
+    ]
+  },
+  "Environnement numérique": {
+    "color": [94,37,99],
+    "rank": 4,
+    "skills": [
+      "Résoudre des problèmes techniques",
+      "Construire un environnement numérique"
+    ]
+  }
+}
