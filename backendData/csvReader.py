@@ -153,6 +153,6 @@ def csv_read(filename, delimiter=","):
                     csv_data.append(row)
                     line_count += 1
     except FileNotFoundError as e:
-        if e.filename is '':
+        if e.filename == '':
             pass
     return csv_headers, csv_data

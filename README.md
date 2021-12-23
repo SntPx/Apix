@@ -28,4 +28,13 @@ Il est toutefois nécessaire de télécharger et d'installer les modules externe
 Pour ce faire, dans la ligne de commande, placez-vous dans le dossier accueillant Apix et lancez:
 * `pip install -r ./requirements.txt`
 
-Une fois que la commande pip se termine, vous pouvez lancer Apix, depuis la ligne de commande: `python3 apix.py` 
+Une fois que la commande pip se termine, vous pouvez lancer Apix, depuis la ligne de commande: `python3 apix.py`
+
+### Captures d'écran
+* Candidats ayant atteint le score minimal défini:
+  ![alt Demo 1](https://act-now.fr/apix/Apix_Demo1.png)
+  ![alt Demo 2](https://act-now.fr/apix/Apix_Demo2.png) 
+  
+* Candidats n'ayant pas atteint le score minimal défini:
+  ![alt Demo 3](https://act-now.fr/apix/Apix_Demo3.png)
+  ![alt Demo 4](https://act-now.fr/apix/Apix_Demo4.png)

@@ -124,7 +124,7 @@ def create_domains_skills():
         with open(os.path.join(
             os.path.dirname(os.path.pardir),
             'res', 'crcn.json'
-        )) as jsonfile:
+        ), encoding='utf-8') as jsonfile:
             jsondata = json.load(jsonfile)
             for domain, data in jsondata.items():
                 d = Domain()
