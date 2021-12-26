@@ -1,4 +1,19 @@
-#!/usr/bin/python3.7
+#!/usr/bin/python3
+#
+# Copyright (c) 2021-2022 Christophe 'SntPx' RIVIERE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, version 3.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
 """ Entrypoint for pxmgr
 
 Entrypoint for pxmgr
@@ -27,11 +42,9 @@ __maintainer__ = "Christophe 'SntPx' RIVIERE"
 __status__ = "Production"
 __version__ = "0.0.1"
 import sys
-import os
 from PyQt6 import QtWidgets
 from gui.window import Ui
-from backendData.csvReader import csv_read, populate_pupils
-from edu.Domain import create_domains_skills, get_domains
+from edu.Domain import create_domains_skills
 
 
 
