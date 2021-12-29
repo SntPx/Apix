@@ -1,1 +1,1 @@
-CreateObjetc("Wscript.Shell").Run "apix.bat",0,True
+CreateObject("Wscript.Shell").Run "apix.bat",0,True
