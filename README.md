@@ -31,8 +31,7 @@ Pour ce faire, dans la ligne de commande, placez-vous dans le dossier accueillan
 Une fois que la commande pip se termine, vous pouvez lancer Apix, depuis la ligne de commande: `python3 apix.py`
 
    #### Lancement sous Windows
-Vous pouvez lancer Apix sans passer par la ligne de commande, une fois l'installation des modules nécessaires faite.
-Pour cela, double-cliquez sur le fichier `Apix.vbs`
+Vous pouvez lancer Apix sans passer par la ligne de commande, une fois l'installation des modules nécessaires faite, en double cliquant sur `apix.pyw`
 
 ### Captures d'écran
 * Candidats ayant atteint le score minimal défini:
