@@ -1,0 +1,10 @@
+__author__ = "Christophe 'SntPx' RIVIERE"
+__contact__ = "sntpx@meltdown.fr"
+__copyright__ = "Copyright 2021, Christophe 'SntPx' RIVIERE"
+__date__ = "2021/12/14"
+__deprecated__ = False
+__email__ = "meltdownfr@gmail.com"
+__license__ = "GPLv3"
+__maintainer__ = "Christophe 'SntPx' RIVIERE"
+__status__ = "Production"
+__version__ = "1.0.3"

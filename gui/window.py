@@ -31,16 +31,6 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 """
 
-__author__ = "Christophe 'SntPx' RIVIERE"
-__contact__ = "sntpx@meltdown.fr"
-__copyright__ = "Copyright 2021, Christophe 'SntPx' RIVIERE"
-__date__ = "2021/12/14"
-__deprecated__ = False
-__email__ = "meltdownfr@gmail.com"
-__license__ = "GPLv3"
-__maintainer__ = "Christophe 'SntPx' RIVIERE"
-__status__ = "Production"
-__version__ = "1.0.0"
 import os
 from PyQt6 import QtWidgets, uic, QtCore, QtGui
 from decimal import *
@@ -48,6 +38,7 @@ from backendData.csvReader import csv_read, populate_pupils
 from edu.Domain import Domain, Skill
 from collections import deque
 import datetime
+from __init__ import __version__
 
 
 class Ui(QtWidgets.QMainWindow):

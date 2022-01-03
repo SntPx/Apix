@@ -16,23 +16,46 @@
 
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Frame, PageTemplate
 from reportlab.pdfgen.canvas import Canvas
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import pagesizes
 from reportlab.lib.units import cm
 from functools import partial
 import uuid
 import io
+from __init__ import __version__
 
 PAGE_WIDTH, PAGE_HEIGHT = [x/cm for x in A4]
 PAGESIZE = pagesizes.portrait(A4)
 MARGINS = {
-    'left': 2.2 * cm,
-    'right': 2.2 * cm,
+    'left': 1.0 * cm,
+    'right': 1.0 * cm,
     'top': 1.5 * cm,
     'bottom': 1.5 * cm
 }
 STYLES = getSampleStyleSheet()
+HEADER = {
+    'text': f'Apix v{__version__}',
+    'style': ParagraphStyle(
+        'ky_header',
+        fontName='Helvetica',
+        fontSize=5,
+        bulletFontName='Helvetica',
+        bulletFontSize=9,
+        bulletAnchor='start'
+    )
+}
+FOOTER = {
+    'text': f'Document généré par Apix v{__version__}',
+    'style': ParagraphStyle(
+        'ky_footer',
+        fontName='Helvetica',
+        fontSize=5,
+        bulletFontName='Helvetica',
+        bulletFontSize=9,
+        bulletAnchor='start'
+    )
+}
 
 
 def footer(canvas, doc, content):
@@ -43,26 +66,32 @@ def footer(canvas, doc, content):
 
 
 def header(canvas, doc, content):
-    canvas.saveSate()
+    canvas.saveState()
     w, h = content.wrap(doc.width, doc.topMargin)
     content.drawOn(canvas, doc.leftMargin, doc.height + doc.bottomMargin + doc.topMargin - h)
     canvas.restoreState()
 
 
 def header_and_footer(canvas, doc, header_content, footer_content):
-    header(canvas, header_content)
-    footer(canvas, footer_content)
+    header(canvas, doc, header_content)
+    footer(canvas, doc, footer_content)
 
 
-class PDF:
+class BasePDF:
 
-    def __init__(self, content, title, header, footer, **kwargs):
+    def __init__(self, content, title, header=None, footer=None, **kwargs):
         self.title = title
         self.content = []
         self._templates = []
         self._page_ids = []
-        self._header = header
-        self._footer = footer
+        if header is not None:
+            setattr(self, '_header', Paragraph(f"{HEADER['text'] - header}", HEADER['style']))
+        if header is None:
+            setattr(self, '_header', Paragraph(HEADER['text'], HEADER['style']))
+        if footer is not None:
+            setattr(self, '_footer', Paragraph(f"{FOOTER['text'] - footer}", FOOTER['style']))
+        if header is None:
+            setattr(self, '_footer', Paragraph(FOOTER['text'], FOOTER['style']))
         self._buffer = io.BytesIO()
         self.content = content
         self._author = 'Anononymous'
@@ -76,8 +105,8 @@ class PDF:
                                      title=self.title,
                                      _pageBreackQuick=1
                                      )
-        self.add_page(Frame(self.pdf.leftMargin, self.pdf.bottomMargin, self.pdf.width, self.pdf.height, id='mainContent'))
-
+        self.add_page(Frame(self.pdf.leftMargin, self.pdf.bottomMargin, self.pdf.width, self.pdf.height,
+                            id='mainContent'))
 
     def get_pdf(self):
         return self.pdf
@@ -94,7 +123,8 @@ class PDF:
             PageTemplate(
                 id=page_id,
                 frames=frames,
-                #onPage=partial(header_and_footer, header_content=self._header, footer_content=self._footer)
+                onPage=partial(header_and_footer, header_content=self._header,
+                               footer_content=self._footer)
             )
         )
 
