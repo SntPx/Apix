@@ -7,3 +7,4 @@ pyqt6-tools==6.1.0.3.2
 python-dotenv==0.19.2
 qt6-applications==6.1.0.2.2
 qt6-tools==6.1.0.1.2
+reportlab==3.6.3
