@@ -30,23 +30,10 @@ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 """
-
-__author__ = "Christophe 'SntPx' RIVIERE"
-__contact__ = "sntpx@meltdown.fr"
-__copyright__ = "Copyright 2021, Christophe 'SntPx' RIVIERE"
-__date__ = "2021/12/14"
-__deprecated__ = False
-__email__ = "meltdownfr@gmail.com"
-__license__ = "GPLv3"
-__maintainer__ = "Christophe 'SntPx' RIVIERE"
-__status__ = "Production"
-__version__ = "0.0.1"
 import sys
 from PyQt6 import QtWidgets
 from gui.window import Ui
 from edu.Domain import create_domains_skills
-
-
 
 if __name__ == "__main__":
     create_domains_skills()

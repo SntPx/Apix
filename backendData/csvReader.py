@@ -142,13 +142,14 @@ def csv_read(filename, delimiter=","):
             line_count = 0
             for row in csv_reader:
                 if line_count == 0:
-                    r = row[0].replace("\uFEFF", '')
+                    r = row[0].replace("\uFEFF", '')  # Stripping the BOM at the beginning of the file. Can't be
+                                                      # processed by python's csv lib
                     row[0] = r
                     if DEBUG:
                         print(f'Columns are: {",".join(row)}')
                     csv_headers = [x.replace(chr(8217), chr(39)) for x in row]  # Had to replace chr(8217) with chr(39)
-                                                                                # because Pix team doesn't know to use
-                                                                                # raw unbeautified data...
+                                                                                # because python's csv lib can't read
+                                                                                # utf-16 properly
                     line_count += 1
                 else:
                     if DEBUG:

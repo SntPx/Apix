@@ -39,7 +39,7 @@ from edu.Domain import Domain, Skill
 from collections import deque
 import datetime
 from __init__ import __version__
-
+from pdf.pdf import GlobalResultsPDF
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self, ):
@@ -243,3 +243,7 @@ class Ui(QtWidgets.QMainWindow):
         self.csv_data = populate_pupils(h, d)
         self.populate_list()
         self.setWindowTitle(f"{self.KYTITLE} - {os.path.basename(path[0])}")  # Modify window title
+
+    def generate_global_results(self):
+        story = []
+
